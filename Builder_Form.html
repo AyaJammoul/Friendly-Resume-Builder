@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style_Builder_Form.css">
+    <title>Resume Builder Form</title>
+</head>
+
+<body>
+    <a href="./Home_Page.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <form action="">
+        <div class="container">
+            <div class="card">
+                <div class="form">
+                    <div class="left-side">
+                        <div class="left-heading">
+                            <h1>Resume Builder Form</h1>
+                        </div>
+                        <!--this for the phrases in left side-->
+                        <div class="steps-content">
+                            <h2>Step <span class="step-number">1</span></h2>
+                            <p class="step-number-content active">Include your personal details.</p>
+                            <p class="step-number-content d-none">Write a concise and engaging professional
+                                summary.</p>
+                            <p class="step-number-content d-none">Include your professional experience and key
+                                achievements.</p>
+                            <p class="step-number-content d-none">Showcase your most important projects and
+                                achievements.</p>
+                            <p class="step-number-content d-none">Highlight your educational background and
+                                qualifications.</p>
+                            <p class="step-number-content d-none">Showcase your technical and soft skills.</p>
+                            <p class="step-number-content d-none">Preview your CV in real-time before finalizing.</p>
+                            <p class="steps-number-content d-none">Choose the template that best fits your style and
+                                profession.</p>
+                        </div>
+                        <!--this for count the form-->
+                        <ul class="progress-bar">
+                            <li class="active">Personal Details</li>
+                            <li>Professional Summary</li>
+                            <li>Experience</li>
+                            <li>Projects</li>
+                            <li>Education</li>
+                            <li>Skills</li>
+                            <li>Live Preview</li>
+                            <li>Template Selection</li>
+                        </ul>
+                    </div>
+                    <!-- the first part of form-->
+                    <div class="right-side">
+                        <div class="main active">
+                            <div class="text">
+                                <h2>Your Personal Information</h2>
+                                <div class="protip">Let’s start with your personal details. Keep your name clear and
+                                    easy to read. Add your location, but no need for a full address — city and country
+                                    are enough. Make sure your contact information is accurate and up to date.</div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <input type="text" name="name" id="user_name" required require>
+                                    <span>Name</span>
+                                </div>
+                                <div class="input-div">
+                                    <input type="text" name="job" required require>
+                                    <span>Job Tittle</span>
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <input type="text" name="email" required require>
+                                    <span>Email</span>
+                                </div>
+                                <div class="input-div">
+                                    <input type="text" name="phone" required require>
+                                    <span>Phone Number</span>
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <input type="text" name="address" required require>
+                                    <span>Address</span>
+                                </div>
+                            </div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <textarea type="text" name="website-link" placeholder="Website (or social link)"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <div class="buttons" style="padding: 30px 0 50px 0;">
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <!-- the second part of form-->
+                        <div class="main">
+                            <div class="text">
+                                <h2>Professional Summary</h2>
+                            </div>
+                            <div class="protip">Write a short summary that captures who you are and what you bring to
+                                the
+                                table. Highlight your strengths, experience level, and career goals. Keep it to 3–4
+                                sentences that make a strong first impression.</div>
+                            <div class="input-text">
+                                <div class="input-div">
+                                    <textarea name="summary" required require></textarea>
+                                </div>
+                            </div>
+                            <div class="buttons button_space">
+                                <button type="button" class="back_button">Back</button>
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <!-- the third part of form-->
+                        <div class="main">
+                            <div class="text">
+                                <h2>Experience</h2>
+                            </div>
+                            <div class="protip">List your most recent roles first. Include your job title, company name,
+                                and
+                                employment dates. Focus on your accomplishments — use action verbs and quantify your
+                                results
+                                when possible.</div>
+                            <div class="work-fields">
+                                <div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="text" name="company-name[]" required>
+                                            <span>Company Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="text" name="role-title[]" required>
+                                            <span>Your Role</span>
+                                        </div>
+                                        <div class="input-div">
+                                            <input type="text" name="employer-location[]" required>
+                                            <span>Location</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="month" name="employer-start-date[]" required>
+                                            <span>Start Date</span>
+                                        </div>
+                                        <div class="input-div">
+                                            <input type="month" name="employer-end-date[]" required>
+                                            <span>End Date</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <textarea name="employer-extra-details[]"
+                                                placeholder="Describe your key duties and highlight what you achieved in this role."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="add-work-button" class="add-new"><a href="javascript:void(0);"
+                                    class="add_work_fields">+ Add new</a></div>
+                            <div class="buttons button_space">
+                                <button type="button" class="back_button">Back</button>
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <!-- the fourth part of form-->
+                        <div class="main">
+                            <div class="text">
+                                <h2>Projects</h2>
+                                <div class="protip">Showcase the projects you’ve worked on that best demonstrate your
+                                    skills and initiative. Include the project title, a short description, your role,
+                                    and the technologies or tools you used. Highlight measurable results — such as
+                                    improvements, efficiency gains, or successful outcomes. Keep each project summary
+                                    concise and focused on what makes it valuable or unique.</div>
+                            </div>
+                            <div class="project-fields">
+                                <div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="text" name="project-name[]" required>
+                                            <span>Project Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <textarea name="description[]" placeholder="Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <textarea type="text" name="technologies-used[]"
+                                                placeholder="Technologies Used" required></textarea>
+                                        </div>
+                                        <div class="input-div">
+                                            <textarea type="text" name="key-features[]" placeholder="Key Features"
+                                                required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="text" name="outcomes[]" required>
+                                            <span>Outcome</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ad-project-button" class="add-new"><a href="javascript:void(0);"
+                                    class="add_projects_fields">+ Add new</a></div>
+                            <div class="buttons button_space">
+                                <button type="button" class="back_button">Back</button>
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <!-- the fifth part of form-->
+                        <div class="main">
+                            <div class="text">
+                                <h2>Education</h2>
+                                <div class="protip">Share your educational background, starting from your most recent
+                                    degree. Include the institution name, degree earned, and graduation date. Add honors
+                                    or
+                                    relevant coursework if they help your profile stand out.</div>
+                            </div>
+                            <div class="education-fields">
+                                <div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="text" name="school-name[]" required require>
+                                            <span>School Name</span>
+                                        </div>
+                                        <div class="input-div">
+                                            <input type="text" name="school-certification[]" required require>
+                                            <span>Certification</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <input type="month" name="school-end-date[]" required require>
+                                            <span>End Date</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-text">
+                                        <div class="input-div">
+                                            <textarea name="school-extra-details[]"
+                                                placeholder="Extra details"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ad-ed-button" class="add-new"><a href="javascript:void(0);" class="add_fields">+
+                                    Add new</a></div>
+                            <div class="buttons button_space">
+                                <button type="button" class="back_button">Back</button>
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <!-- the sixth part of form-->
+                        <div class="main">
+                            <div class="text">
+                                <h2>Skills</h2>
+                                <div class="protip"> Highlight your top skills that match the roles you’re aiming for.
+                                    Mix technical and soft skills to show versatility. Keep the list clean and easy to
+                                    scan.</div>
+                            </div>
+                            <div class="skill-fields">
+                                <div class="input-text">
+                                    <div class="input-div">
+                                        <input type="text" name="skill[]" required require>
+                                        <span>Skill</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ad-skill-button" class="add-new"><a href="javascript:void(0);"
+                                    class="add_skill_fields">+ Add new</a></div>
+                            <div class="buttons button_space">
+                                <button type="button" class="back_button">Back</button>
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <div class="main">
+                            <div class="text">
+                                <h2>Live Preview</h2>
+                                <div class="protip">Great job! Your CV is ready to preview before download.<br>
+                                    Take a moment to review all your details and make final edits if needed.<br>
+                                    <span style="color:#cc2c2c;">Avoid refreshing this page — your current progress
+                                        might be lost.</span>
+                                </div>
+                                <div id="live-preview">
+                                    <h3 id="preview-name"></h3>
+                                    <p><strong>Job Tittle:</strong><span id="preview-job"></span></p>
+                                    <p><strong>Email:</strong> <span id="preview-email"></span></p>
+                                    <p><strong>Phone:</strong> <span id="preview-phone"></span></p>
+                                    <p><strong>Address:</strong> <span id="preview-address"></span></p>
+                                    <div class="website-section">
+                                        <p><strong>Website:</strong> <span id="preview-website"></span></p>
+                                    </div>
+
+                                    <br>
+
+                                    <h3>Professional Summary</h3>
+                                    <p id="preview-summary"></p>
+
+                                    <br>
+
+                                    <div class="experience-section">
+                                        <h3>Experience</h3>
+                                        <div id="preview-experience"></div>
+                                        <br>
+                                    </div>
+
+                                    <div class="project-section">
+                                        <h3>Project</h3>
+                                        <div id="preview-project"></div>
+                                    </div>
+
+                                    <br>
+
+                                    <h3>Education</h3>
+                                    <div id="preview-education"></div>
+
+                                    <br>
+
+                                    <h3>Skills</h3>
+                                    <ul id="preview-skills"></ul>
+                                </div>
+                            </div>
+                            <div class="buttons button_space">
+                                <button type="button" class="back_button">Back</button>
+                                <button type="button" class="next_button">Next</button>
+                            </div>
+                        </div>
+                        <div class="main">
+                            <div class="text">
+                                <h2>Template Selection</h2>
+                                <div class="protip">Great! Now choose the template you’d like to use for your resume.
+                                    You won’t see the design right away — it will be automatically applied when you
+                                    download
+                                    your final CV. Take a moment to pick the one that best matches your style,then
+                                    continue
+                                    to download your professionally formatted resume.
+                                     <span style="color:#cc2c2c;"><br>The template is specifically designed for PDF generation, ensuring that all formatting, 
+                                        layout, and styling are preserved accurately during the export process. It is not intended for DOCX output.</span>
+                                </div>
+                                <div id="imageContainer">
+                                    <div class="imageDiv">
+                                        <img src="./img/template 1.png" data-label="shades-of-white"
+                                            class="template-img selected" data-template="template1">
+                                    </div>
+                                    <div class="imageDiv">
+                                        <img src="./img/template 2.png" data-label="shades-of-black"
+                                            class="template-img" data-template="template2">
+                                    </div>
+                                    <div class="imageDiv">
+                                        <img src="./img/template 3.png" data-label="shades-of-gray" class="template-img"
+                                            data-template="template3">
+                                    </div>
+                                </div>
+                                <input type="hidden" name="selected_template" id="selected_template_input"
+                                    value="shades-of-white">
+                                <div class="buttons button_space">
+                                    <button type="button" class="back_button">Back</button>
+                                    <button type="button" id="submit_form" class="submit_button">Download PDF
+                                        Resume</button>
+                                </div>
+                                <div class="buttons button_space">
+                                    <button style="display: none;"></button>
+                                    <button type="button" id="word_form" class="word_button">Download DOCX
+                                        Resume</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="./js/script_Builder_Form.js"></script>
+    <script src="./js/downloadtemplate.js"></script>
+
+    <script type="module">
+        import { Document, Packer, Paragraph, TextRun, HeadingLevel } from "https://cdn.skypack.dev/docx";
+        document.getElementById("word_form").addEventListener("click", async function () {
+            const name = document.querySelector('input[name="name"]').value || "";
+            const job = document.querySelector('input[name="job"]').value || "";
+            const email = document.querySelector('input[name="email"]').value || "";
+            const phone = document.querySelector('input[name="phone"]').value || "";
+            const address = document.querySelector('input[name="address"]').value || "";
+            const website = document.querySelector('textarea[name="website-link"]').value || "";
+            const summary = document.querySelector('textarea[name="summary"]').value || "";
+
+            const parseTextarea = (text) => text.split("\n").map(line => new Paragraph(line));
+
+            const experienceArr = [];
+            document.querySelectorAll(".work-fields > div").forEach(work => {
+                const role = work.querySelector('input[name="role-title[]"]').value || "";
+                const company = work.querySelector('input[name="company-name[]"]').value || "";
+                const start = work.querySelector('input[name="employer-start-date[]"]').value || "";
+                const end = work.querySelector('input[name="employer-end-date[]"]').value || "";
+                const details = work.querySelector('textarea[name="employer-extra-details[]"]').value || "";
+                
+                if (role || company || start || end || details) {
+                    experienceArr.push({ role, company, start, end, details });
+                }
+            });
+
+            const projectArr = [];
+                document.querySelectorAll(".project-fields > div").forEach(project => {
+        
+                const namepro = project.querySelector('input[name="project-name[]"]').value || "";
+                const description = project.querySelector('textarea[name="description[]"]').value || "";
+                const technologies = project.querySelector('textarea[name="technologies-used[]"]').value || "";
+                const key = project.querySelector('textarea[name="key-features[]"]').value || "";
+                const outcome = project.querySelector('input[name="outcomes[]"]').value || "";
+                
+                if (namepro || description || technologies || key || outcome) {
+                    projectArr.push({ namepro, description, technologies, key, outcome });
+                }
+            });
+
+            const educationArr = [];
+            document.querySelectorAll(".education-fields > div").forEach(ed => {
+                const school = ed.querySelector('input[name="school-name[]"]').value || "";
+                const cert = ed.querySelector('input[name="school-certification[]"]').value || "";
+                const end = ed.querySelector('input[name="school-end-date[]"]').value || "";
+                const details = ed.querySelector('textarea[name="school-extra-details[]"]').value || "";
+                if (school || cert || end || details) {
+                    educationArr.push({ school, cert, end, details });
+                }
+            });
+            
+            const skillsArr = [];
+            document.querySelectorAll('input[name="skill[]"]').forEach(skill => {
+                if (skill.value.trim() !== "") skillsArr.push(skill.value.trim());
+            });
+            
+            // Build doc
+            const docChildren = [
+                new Paragraph({ text: name, heading: HeadingLevel.TITLE }),
+                new Paragraph({ text: job, heading: HeadingLevel.HEADING_2 }),
+                new Paragraph(website),
+                new Paragraph(`${address} | ${phone} | ${email}`),
+            ];
+            
+            // Summary
+            if (summary.trim()) {
+                docChildren.push(new Paragraph({ text: "About Me", heading: HeadingLevel.HEADING_2 }));
+                docChildren.push(...parseTextarea(summary));
+            }
+            
+            // Experience
+            if (experienceArr.length) {
+                docChildren.push(new Paragraph({ text: "Professional Experience", heading: HeadingLevel.HEADING_2 }));
+                experienceArr.forEach(exp => {
+                    if (exp.role) docChildren.push(new Paragraph({ text: exp.role, bold: true }));
+                    if (exp.company) docChildren.push(new Paragraph(`Company: ${exp.company}`));
+                    if (exp.start || exp.end) docChildren.push(new Paragraph(`Duration: ${exp.start} - ${exp.end}`));
+                    if (exp.details) docChildren.push(...parseTextarea(exp.details));
+                });
+            }
+            
+            // Project
+            if (projectArr.length) {
+                docChildren.push(new Paragraph({ text: "Projects", heading: HeadingLevel.HEADING_2 }));
+                projectArr.forEach(pro => {
+                    if (pro.namepro) docChildren.push(new Paragraph({ text: pro.namepro, bold: true }));
+                    if (pro.description) docChildren.push(...parseTextarea(`Description: ${pro.description}`));
+                    if (pro.technologies) docChildren.push(...parseTextarea(`Technologies: ${pro.technologies}`));
+                    if (pro.key) docChildren.push(...parseTextarea(`Key Features: ${pro.key}`));
+                    if (pro.outcome) docChildren.push(new Paragraph(`Outcomes: ${pro.outcome}`));
+                });
+            }
+            
+            // Education
+            if (educationArr.length) {
+                docChildren.push(new Paragraph({ text: "Education", heading: HeadingLevel.HEADING_2 }));
+                educationArr.forEach(ed => {
+                    if (ed.school) docChildren.push(new Paragraph({ text: ed.school, bold: true }));
+                    if (ed.cert) docChildren.push(new Paragraph(`Certification: ${ed.cert}`));
+                    if (ed.end) docChildren.push(new Paragraph(`End Date: ${ed.end}`));
+                    if (ed.details) docChildren.push(...parseTextarea(ed.details));
+                });
+            }
+            
+            // Skills
+            if (skillsArr.length) {
+                docChildren.push(new Paragraph({ text: "Skills", heading: HeadingLevel.HEADING_2 }));
+                skillsArr.forEach(skill => docChildren.push(new Paragraph(`• ${skill}`)));
+            }
+
+            const doc = new Document({
+                sections: [{ properties: {}, children: docChildren }]
+            });
+            
+            const blob = await Packer.toBlob(doc);
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `${name.replace(/\s+/g, "_")}_resume.docx`;
+            link.click();
+        });
+    </script>
+
+</body>
+
+</html>
