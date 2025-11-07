@@ -714,31 +714,53 @@ document.getElementById("submit_form").addEventListener("click", async function 
 `;
   }
 
-  resumeContainer.style.width = "785px"; 
-  resumeContainer.style.minHeight = "1100px"; 
+ function setResponsiveSize() {
+  if (window.innerWidth < 480) {
+    resumeContainer.style.width = "100%";
+    resumeContainer.style.padding = "10mm";
+    resumeContainer.style.transform = "scale(1.05)";
+    resumeContainer.style.transformOrigin = "top center";
+  } else if (window.innerWidth < 768) {
+    resumeContainer.style.width = "100%";
+    resumeContainer.style.padding = "15mm";
+    resumeContainer.style.transform = "scale(1.02)";
+    resumeContainer.style.transformOrigin = "top center";
+  } else if (window.innerWidth < 1200) {
+    resumeContainer.style.width = "90%";
+    resumeContainer.style.padding = "20mm";
+    resumeContainer.style.transform = "scale(1)";
+    resumeContainer.style.transformOrigin = "top center";
+  } else {
+    resumeContainer.style.width = "785px";
+    resumeContainer.style.padding = "25mm";
+    resumeContainer.style.transform = "scale(1)";
+  }
+}
 
-  resumeContainer.innerHTML = templateHTML;
+// Apply responsive adjustments before generating PDF
+setResponsiveSize();
+window.addEventListener("resize", setResponsiveSize);
 
-  setTimeout(async () => {
-    await html2pdf().from(resumeContainer).set({
-      margin: 1,
-      padding: 2,
-      filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
-      html2canvas: {
-        scale: 2,
-        logging: true,
-        letterRendering: true
-      },
-      jsPDF: {
-        unit: 'px',
-        format: 'a4',
-        orientation: 'portrait'
-      }
-    }).save();
+// Generate PDF after layout adjustment
+setTimeout(async () => {
+  const opt = {
+    margin: 0,
+    filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
+    html2canvas: {
+      scale: window.innerWidth < 768 ? 3 : 2, // higher scale for mobile for sharper PDF
+      logging: false
+    },
+    jsPDF: {
+      unit: "mm",
+      format: "a4",
+      orientation: "portrait"
+    }
+  };
 
-  }, 100);
-
+  await html2pdf().from(resumeContainer).set(opt).save();
+}, 300);
 
 });
+
 
 
