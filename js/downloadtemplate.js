@@ -147,6 +147,25 @@ document.getElementById("submit_form").addEventListener("click", async function 
     page-break-inside: avoid;
   }
 }
+  @media screen and (max-width: 1024px) {
+  .a4-container {
+    padding: 18mm;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .a4-container {
+    padding: 12mm;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .a4-container {
+    padding: 8mm;
+  }
+}
 
   body, div, p {
     font-family: 'Helvetica', 'Arial', sans-serif;
@@ -414,6 +433,25 @@ document.getElementById("submit_form").addEventListener("click", async function 
     margin: 0 auto;
   }
 }
+  @media screen and (max-width: 1024px) {
+  .a4-container {
+    padding: 18mm;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .a4-container {
+    padding: 12mm;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .a4-container {
+    padding: 8mm;
+  }
+}
 
 </style>
 <div class="resume-container">
@@ -504,6 +542,25 @@ document.getElementById("submit_form").addEventListener("click", async function 
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .a4-container {
+    padding: 18mm;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .a4-container {
+    padding: 12mm;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .a4-container {
+    padding: 8mm;
+  }
+}
 
   /* HEADER */
   .header {
@@ -661,6 +718,8 @@ document.getElementById("submit_form").addEventListener("click", async function 
 `;
   }
 
+  resumeContainer.style.width = "785px"; 
+  resumeContainer.style.minHeight = "1100px"; 
 
   resumeContainer.innerHTML = templateHTML;
 
@@ -685,4 +744,3 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
 
 });
-
