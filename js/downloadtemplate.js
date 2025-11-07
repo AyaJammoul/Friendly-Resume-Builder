@@ -731,7 +731,7 @@ document.getElementById("submit_form").addEventListener("click", async function 
       },
       jsPDF: {
         unit: 'px',
-        format: [794, 1123],
+        format: 'a4',
         orientation: 'portrait'
       }
     }).save();
@@ -740,3 +740,4 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
 
 });
+
