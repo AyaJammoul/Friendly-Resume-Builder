@@ -156,14 +156,14 @@ document.getElementById("submit_form").addEventListener("click", async function 
 /* Mobile screens */
 @media screen and (max-width: 768px) {
   .a4-container {
-    padding: 12mm;
+    padding: 10mm;
   }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 480px) {
   .a4-container {
-    padding: 8mm;
+    padding: 0mm;
   }
 }
 
@@ -442,14 +442,14 @@ document.getElementById("submit_form").addEventListener("click", async function 
 /* Mobile screens */
 @media screen and (max-width: 768px) {
   .a4-container {
-    padding: 12mm;
+    padding: 10mm;
   }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 480px) {
   .a4-container {
-    padding: 8mm;
+    padding: 5mm;
   }
 }
 
