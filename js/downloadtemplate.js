@@ -641,23 +641,36 @@ document.getElementById("submit_form").addEventListener("click", async function 
   resumeContainer.innerHTML = templateHTML;
 
   setTimeout(async () => {
-    await html2pdf().from(resumeContainer).set({
-      margin: 10,
-      padding: 2,
-      filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
-      html2canvas: {
-        scale: 2,
-        logging: true,
-        letterRendering: true
-      },
-      jsPDF: {
-        unit: 'px',
-        format: [794, 1123],
-        orientation: 'portrait'
-      }
-    }).save();
+  const opt = {
+    margin: 10,
+    padding: 2,
+    filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
+    html2canvas: {
+      scale: 2,
+      logging: true,
+      letterRendering: true
+    },
+    jsPDF: {
+      unit: 'px',
+      format: [794, 1123],
+      orientation: 'portrait'
+    }
+  };
 
-  }, 100);
+  // Generate the PDF as a Blob
+  const pdfBlob = await html2pdf().from(resumeContainer).set(opt).output('blob');
+
+  // Create a download link and trigger it manually
+  const blobUrl = URL.createObjectURL(pdfBlob);
+  const link = document.createElement('a');
+  link.href = blobUrl;
+  link.download = `${name.replace(/\s+/g, '_')}_resume.pdf`;
+
+  // Clean up the object URL
+  URL.revokeObjectURL(blobUrl);
+}, 100);
+
+
 
 
 });
