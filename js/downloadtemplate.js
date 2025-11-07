@@ -254,7 +254,6 @@ document.getElementById("submit_form").addEventListener("click", async function 
     @media screen and (max-width: 768px) {
   .a4-container {
     transform: scale(0.9);
-    transform-origin: top center;
     width: 100%;
     margin: 0 auto;
   }
@@ -744,3 +743,4 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
 
 });
+
