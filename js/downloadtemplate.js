@@ -157,6 +157,7 @@ document.getElementById("submit_form").addEventListener("click", async function 
 @media screen and (max-width: 768px) {
   .a4-container {
     padding: 10mm;
+    width: 100%;
   }
 }
 
@@ -164,6 +165,7 @@ document.getElementById("submit_form").addEventListener("click", async function 
 @media screen and (max-width: 480px) {
   .a4-container {
     padding: 0mm;
+    width: 100%;
   }
 }
 
@@ -251,12 +253,7 @@ document.getElementById("submit_form").addEventListener("click", async function 
       padding: 0;
     }
   }
-    @media screen and (max-width: 768px) {
-  .a4-container {
-    transform: scale(0.9);
-    width: 100%;
-    margin: 0 auto;
-  }
+    
 }
 
 </style>
@@ -743,4 +740,3 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
 
 });
-
