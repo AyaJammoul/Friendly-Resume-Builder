@@ -232,6 +232,15 @@ document.getElementById("submit_form").addEventListener("click", async function 
       padding: 0;
     }
   }
+    @media screen and (max-width: 768px) {
+  .a4-container {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 </style>
 
 <div class="a4-container">
@@ -397,6 +406,15 @@ document.getElementById("submit_form").addEventListener("click", async function 
     font-size: 12.5px;
     color: #444;
   }
+    @media screen and (max-width: 768px) {
+  .a4-container {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 </style>
 <div class="resume-container">
   <!-- LEFT COLUMN -->
@@ -475,6 +493,14 @@ document.getElementById("submit_form").addEventListener("click", async function 
   }
   .section {
     page-break-inside: avoid;
+  }
+}
+  @media screen and (max-width: 768px) {
+  .a4-container {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -641,36 +667,23 @@ document.getElementById("submit_form").addEventListener("click", async function 
   resumeContainer.innerHTML = templateHTML;
 
   setTimeout(async () => {
-  const opt = {
-    margin: 10,
-    padding: 2,
-    filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
-    html2canvas: {
-      scale: 2,
-      logging: true,
-      letterRendering: true
-    },
-    jsPDF: {
-      unit: 'px',
-      format: [794, 1123],
-      orientation: 'portrait'
-    }
-  };
+    await html2pdf().from(resumeContainer).set({
+      margin: 10,
+      padding: 2,
+      filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
+      html2canvas: {
+        scale: 2,
+        logging: true,
+        letterRendering: true
+      },
+      jsPDF: {
+        unit: 'px',
+        format: [794, 1123],
+        orientation: 'portrait'
+      }
+    }).save();
 
-  // Generate the PDF as a Blob
-  const pdfBlob = await html2pdf().from(resumeContainer).set(opt).output('blob');
-
-  // Create a download link and trigger it manually
-  const blobUrl = URL.createObjectURL(pdfBlob);
-  const link = document.createElement('a');
-  link.href = blobUrl;
-  link.download = `${name.replace(/\s+/g, '_')}_resume.pdf`;
-
-  // Clean up the object URL
-  URL.revokeObjectURL(blobUrl);
-}, 100);
-
-
+  }, 100);
 
 
 });
