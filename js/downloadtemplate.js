@@ -661,8 +661,6 @@ document.getElementById("submit_form").addEventListener("click", async function 
 `;
   }
 
-  resumeContainer.style.width = "785px"; 
-  resumeContainer.style.minHeight = "1100px"; 
 
   resumeContainer.innerHTML = templateHTML;
 
@@ -687,3 +685,4 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
 
 });
+
