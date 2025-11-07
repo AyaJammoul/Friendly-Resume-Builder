@@ -721,7 +721,7 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
   setTimeout(async () => {
     await html2pdf().from(resumeContainer).set({
-      margin: 10,
+      margin: 1,
       padding: 2,
       filename: `${name.replace(/\s+/g, '_')}_resume.pdf`,
       html2canvas: {
@@ -740,4 +740,5 @@ document.getElementById("submit_form").addEventListener("click", async function 
 
 
 });
+
 
